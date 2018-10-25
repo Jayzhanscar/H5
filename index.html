@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+
+    <title>AROMA爱诺玛亚</title>
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link href="css/shake.css" rel="stylesheet" media="all">
+
+
+</head>
+<body style="width: 100%;height: 100%; " onmousewheel="return false;" id="test">
+<div id="app" >
+     <img id='play' src="img/music.png" class="pic picc"  @click="play()">
+     <div @click="updown(2, 0)" id="page1" v-show="page1" class="change haha" style="background-image: url(img/daitou.jpg);background-size:96% 100% ;width: 96% ">
+        <!--
+         <img src="img/test1.gif" style="width: 100%" >
+         <div class="shake"> 开始答题 </div>
+         <ul v-for="url in imgPage1">
+            <span class="bt_go cc1"  style="background-color: greenyellow;height: 100px;width: 100px" ></span>
+         </ul>
+         -->
+
+     </div>
+    <div id="page2" v-show="page2" class="change">
+
+        <img src="img/page3.jpg" width="96%"  height="98%" class="haha"/>
+        <img   class="ballon" @click="updown(3, 0)" src="img/j.png" style="margin-left: -74%;position: absolute;bottom: 6%;width: 53%;height: 11%"/>
+
+    </div>
+    <div id="page3" v-show="page3" class="change">
+
+        <img src="img/page2.jpg" width="96%" height="98%" class="haha">
+        <img  class="ballon" @click="updown(4, 0)" style="position: absolute;bottom: 16%;width: 98%;margin-left: -97%;height: 15%;" src="img/下一页.png"/>
+        <input id='get' style="font-size:25px;height: 8%; width: 60%;position: absolute;bottom: 50%;margin-left: -79%;border:0;background-color:transparent;z-index: 999"/>
+
+    </div>
+    <div id="page4" v-show="page4" class="change">
+        <img style="width: 96%;height: 100%" src="img/测试1.png"  class="haha" />
+
+
+         <ul style="margin-left: -11%">
+             <li   @click="updown(5, 1)" ><img src="img/1aa.png" class="xuanxiang shake-slow shaker" style="bottom: 23%"></li>
+             <li  @click="updown(5, 0)" ><img src="img/1bb.png" class="xuanxiang shake-slow shakea" style="bottom: 13%"></li>
+             <li  @click="updown(5, 0)" ><img src="img/1cc.png"  class="xuanxiang shake-slow shakeb" style="bottom: 3%"></li>
+         </ul>
+    </div>
+    <div id="page5" v-show="page5" class="change">
+        <img style="width: 96%;height: 100%" src="img/测试2.png"  class="haha" />
+
+        <ul style="margin-left: -11%">
+            <li  @click="updown(6, 1)" ><img src="img/2aa.png" class="xuanxiang shake-slow shaker" style="bottom: 23%"></li>
+            <li  @click="updown(6, 0)" ><img src="img/2bb.png"  class="xuanxiang shake-slow shakea" style="bottom: 13%"></li>
+            <li  @click="updown(6, 0)" ><img src="img/2cc.png"  class="xuanxiang shake-slow shakeb" style="bottom: 3%"></li>
+        </ul>
+    </div>
+    <div id="page6" v-show="p6" class="change">
+        <img style="width: 96%;height: 100%" src="img/测试3.png"  class="haha"/>
+
+        <ul style="margin-left: -11%">
+            <li  @click="updown(7, 1)"  ><img src="img/3aa.png" class="xuanxiang shake-slow shaker" style="bottom: 23%"></li>
+            <li  @click="updown(7, 0)"  ><img src="img/3bb.png" class="xuanxiang shake-slow shakea" style="bottom: 13%"></li>
+            <li  @click="updown(7, 0)"  ><img src="img/3cc.png" class="xuanxiang shake-slow shakeb" style="bottom: 3%"></li>
+        </ul>
+    </div>
+    <div id="page7" v-show="p7" class="change">
+        <img style="width: 96%;height: 100%" src="img/测试4.png" class="haha" />
+
+        <ul style="margin-left: -11%">
+            <li  @click="updown(8, 1)"><img src="img/4aa.png" class="xuanxiang shake-slow shaker"  style="bottom: 23%"></li>
+            <li  @click="updown(8, 0)"><img src="img/4bb.png"  class="xuanxiang shake-slow shakea"   style="bottom: 13%"></li>
+            <li  @click="updown(8, 0)" ><img src="img/4cc.png" class="xuanxiang shake-slow shakeb"  style="bottom: 3%"></li>
+        </ul>
+    </div>
+    <div id="page8" v-show="p8" class="change">
+        <img style="width: 96%;height: 100%" src="img/测试5.png" class="haha" />
+
+        <ul style="margin-left: -11%">
+            <li  @click="updown(9, 1)" ><img src="img/5aa.png" class="xuanxiang shake-slow shaker"   style="bottom: 23%"></li>
+            <li  @click="updown(9, 0)" ><img src="img/5bb.png"  class="xuanxiang shake-slow shakea"  style="bottom: 13%"></li>
+            <li  @click="updown(9, 0)" ><img src="img/5cc.png" class="xuanxiang shake-slow shakeb"  style="bottom: 3%"></li>
+        </ul>
+
+    </div>
+    <div id="page9" v-show="p9" class="change">
+        <img id="result" style="width: 96%;height: 100%" src="img/777.jpg" class="haha" />
+        <img  onclick="window.location.reload('/test/index.html')"  src="img/1q.png" style="position: absolute; bottom: 9%;margin-left: -79%;height: 7%;z-index: 99;width: 29%;">
+         <img  @click="updown(10, 0)" src="img/2q.png" style="position: absolute; bottom: 9%;margin-left: -46%;height: 7%;z-index: 99;width: 29%;">
+
+
+    </div>
+    <div id="page10" v-show="p10" class="change">
+        <img style="width: 100%;height: 100%" src="img/oo.jpg"  />
+        <a href="https://t.asczwa.com/taobao?backurl=http://m.tb.cn/h.3SKosPB">跳转</a>
+
+
+    </div>
+</div>
+    <audio src="http://img.tukuppt.com/preview_music/00/04/16/preview-5b835ce5407a3211.mp3" id="myaudio"   controls autoplay loop="true" hidden="true"></audio>
+
+</body>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="js/vue.js"></script>
+ <script src="js/shubiao.js"></script>
+<script src="js/jqAlert2.js"></script>
+
+<script>
+    var all_num = 0 ;// 统计总共的分数
+    var audio = document.getElementById("myaudio");
+
+
+
+    var app = new Vue({
+        el: '#app',
+        data: {
+            message: '下一题',
+            page1: true,
+            page2: false,
+            page3: false,
+            page4: false,
+            page5: false,
+            p6 : false,
+            imgPage1: ['img/111.jpg', 'img/111.jpg', 'img/111.jpg'],
+            imgPage2: [],
+            imgPage3: [],
+            imgPage4 : [],
+            p7:false,
+            p8:false,
+            p9:false,
+            p10: false
+        },
+        methods: {
+            updown: function (action, type) {
+                if(type == 1){
+                    all_num +=1
+                }
+                console.log(all_num)
+                if (action == 2) {
+                    this.page1 = false;
+                    this.page2 = true;
+                    this.page3 = false;
+                    this.page4 = false;
+                    this.page5 = false;
+                    this.p6 = false;
+                    this.p7 = false;
+                    this.p8 = false;
+                    this.p9 = false;
+                    this.p10 = false;
+                }
+                if (action == 3) {
+                    this.page1 = false;
+                    this.page2 = false;
+                    this.page3 = true;
+                    this.page4 = false;
+                    this.page5 = false;
+                    this.p6 = false;
+                    this.p7 = false;
+                    this.p8 = false;
+                    this.p9 = false;
+                    this.p10 = false;
+                }
+                if (action == 4) {
+                    if(!$('#get').val()){
+                        jqAlert.Layer('请填写昵称哦',2000)
+                    }
+                    else {
+                        this.page1 = false;
+                        this.page2 = false;
+                        this.page3 = false;
+                        this.page4 = true;
+                        this.page5 = false;
+                        this.p6 = false;
+                        this.p7 = false;
+                        this.p8 = false;
+                        this.p9 = false;
+                        this.p10 = false;
+                    }
+                }
+                if (action == 5) {
+                    this.page1 = false;
+                    this.page2 = false;
+                    this.page3 = false;
+                    this.page4 = false;
+                    this.page5 = true;
+                    this.p6 = false;
+                    this.p7 = false;
+                    this.p8 = false;
+                    this.p9 = false;
+                    this.p10 = false;
+                }
+                if (action == 6) {
+                    this.page1 = false;
+                    this.page2 = false;
+                    this.page3 = false;
+                    this.page4 = false;
+                    this.page5 = false;
+                    this.p6 = true;
+                    this.p7 = false;
+                    this.p8 = false;
+                    this.p9 = false;
+                    this.p10 = false;
+                }
+                if(action == 7) {
+                    this.page1 = false;
+                    this.page2 = false;
+                    this.page3 = false;
+                    this.page4 = false;
+                    this.page5 = false;
+                    this.p6 =  false;
+                    this.p7 = true;
+                    this.p8 = false;
+                    this.p9 = false;
+                    this.p10 = false;
+                }
+                if (action == 8) {
+                    this.page1 = false;
+                    this.page2 = false;
+                    this.page3 = false;
+                    this.page4 = false;
+                    this.page5 = false;
+                    this.p6 = false;
+                    this.p7 = false;
+                    this.p8 = true;
+                    this.p9 = false;
+                    this.p10 = false;
+                }
+                if(action == 9){
+                    if(all_num >= 4){
+                        $("#result").attr("src","img/9999.jpg")
+
+                    }
+                    if (all_num >= 3 && all_num<4 ){
+                        $("#result").attr("src","img/78.jpg")
+                    }
+                    if (all_num >= 2 && all_num<3 ){
+                        $("#result").attr("src","img/25.jpg")
+                    }
+                    if (all_num >= 1 && all_num<2 ){
+                        $("#result").attr("src","img/777.jpg")
+                    }
+                    this.page1 = false;
+                    this.page2 = false;
+                    this.page3 = false;
+                    this.page4 = false;
+                    this.page5 = false;
+                    this.p6 = false;
+                    this.p7 = false;
+                    this.p8 = false;
+                    this.p9 = true;
+                    this.p10 = false;
+                }
+                if (action == 10 ){
+                    this.page1 = false;
+                    this.page2 = false;
+                    this.page3 = false;
+                    this.page4 = false;
+                    this.page5 = false;
+                    this.p6 = false;
+                    this.p7 = false;
+                    this.p8 = false;
+                    this.p9 = false;
+                    this.p10 = true;
+                }
+            },
+            play:function () {
+                // 播放暂停音乐
+                if($("#play").hasClass("picc")){
+                    $("#play").removeClass("picc");
+                    $('#myaudio')[0].pause()
+
+                }
+                else {
+                    $("#play").addClass("picc");
+                    $('#myaudio')[0].play()
+                }
+
+    }
+
+        }
+    })
+
+    $("#get").bind("input propertychange",function(event){
+        $("#get").css('background-color', 'white') //监听input
+        console.log('ok')
+    });
+    $('#myaudio')[0].play()
+
+</script>
+</html>
