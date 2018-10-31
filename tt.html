@@ -1,2 +1,69 @@
-<!DOCTYPE html><html>	<head>		<meta charset="UTF-8">		<title></title>		<style type="text/css">			.oDiv1{				position: absolute;				height: 100px;				width: 300px;				left: 200px;				top: 50px;				background: yellow;				animation-name: oDiv;				/*animation-delay: 0.5s;延迟时间				animation-iteration-count: 2;循环次数*/				animation-duration: 3s;				/*animation-direction: reverse;反向播放动画*/			}			@-webkit-keyframes oDiv{				0%{left: -180px;top: 200px;opacity: 0;}				100%{left: 200px;top: 50px;opacity: 1;}			}			@keyframes oDiv{				0%{left: -180px;top: 200px;opacity: 0;}				2100%{left: 200px;top: 50px;opacity: 1;}			}		</style>	</head>	<body>		<div class="oDiv1"></div>	</body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ani Auto Demo</title>
 
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animate.css">
+
+    <script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+    <script src="js/aniAuto.min.js"></script>
+
+    <style>.item{line-height: 2em;vertical-align: top;}</style>
+</head>
+
+<body>
+
+<div class="slideInUp animated">
+
+    <h1 class="title ">Auto Ani Demo</h1>
+
+    <div class="demos ">
+        <div class="demo">
+            <div id="item_1" class="ani-auto item tada" ani-delay="2s">
+                delay(延时执行)
+            </div>
+
+            <div id="item_2" class="ani-auto item flipInX"  ani-trigger="#item_1">
+                trigger(承接上一个动画元素执行)
+            </div>
+
+            <div id="item_3" class="ani-auto item rotateIn" ani-duration="3s" ani-trigger="#item_2">
+                trigger duration(执行时间控制)
+            </div>
+
+            <div id="item_4" class="ani-auto item swing"  ani-delay="1s" ani-trigger="#item_3">
+                trigger delay(滞后执行)
+            </div>
+
+            <div id="item_5" class="ani-auto item bounceIn" ani-init-hide ani-trigger="#item_4">
+                trigger hide(隐藏元素执行动画)
+            </div>
+
+            <div id="item_6" class="ani-auto item wobble" ani-iteration="3"  ani-trigger="#item_5">
+                trigger iteration(重复执行)
+            </div>
+        </div>
+
+        <div class="demo" style="margin-top:400px;margin-bottom:400px;">
+            <div id="item_7" class="item ani-auto zoomIn" ani-scroll ani-scroll-offset="-20" ani-trigger="#item_6">
+                <p>trigger scroll offset(跳转制定位置执行动画)</p>
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
+
+<script>
+    $(document).ready(function () {
+
+        $.aniAuto();
+
+    });
+</script>
+
+</body>
+</html>

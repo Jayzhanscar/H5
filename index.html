@@ -8,21 +8,48 @@
     <link rel="stylesheet" type="text/css" href="css/index.css" />
     <link href="css/shake.css" rel="stylesheet" media="all">
 
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animate.css">
+
+    <script src="js/jquery-1.12.3.min.js"></script>
+    <script src="js/aniAuto.min.js"></script>
+
+    <style>
+        .item{line-height: 2em;vertical-align: top;}
+    </style>
 
 </head>
 <body style="width: 100%;height: 100%; " onmousewheel="return false;" id="test">
-<div id="app" >
-     <img id='play' src="img/music.png" class="pic picc"  @click="play()">
-     <div @click="updown(2, 0)" id="page1" v-show="page1" class="change haha" style="background-image: url(img/daitou.jpg);background-size:96% 100% ;width: 96% ">
-        <!--
-         <img src="img/test1.gif" style="width: 100%" >
-         <div class="shake"> 开始答题 </div>
-         <ul v-for="url in imgPage1">
-            <span class="bt_go cc1"  style="background-color: greenyellow;height: 100px;width: 100px" ></span>
-         </ul>
-         -->
 
-     </div>
+<div id="app" >
+    <div v-show="page1" style="position:absolute; bottom: 5%;width: 100%;text-align: center;z-index: 100">点击屏幕继续 </div>
+    <!--<img v-show="page1"  src="img/l2.png"   style="position:absolute; bottom: 8%;width: 100%;text-align: center;z-index: 100" />-->
+
+
+    <img v-show="page1" class="ani-auto   swing"  ani-delay="3s" src="img/l1-2.png" style="position: absolute;
+
+    z-index: 100;
+    width: 27%;
+    right: 6%;
+    bottom: 45%;">
+
+                            <img  v-show="page1"  src="img/l11.png"    class="ani-auto  tada" ani-delay="2s" style="position: absolute;z-index: 100;bottom: 70%; margin-left: 0%;width: 100%"   />
+
+                                <img  v-show="page1"  class="ani-auto   swing"  ani-delay="3s" src="img/l23.png"    style="margin-left: 11% ;  width: 30%; position: absolute;z-index: 100;bottom: 50%">
+
+
+                            <img v-show="page1"  id='play' src="img/music.png" class="pic picc"  @click="play()">
+
+                            <div @click="updown(2, 0)" id="page1" v-show="page1" class="change haha" style="background-image: url(img/H5页面-1.jpg);background-size:96% 100% ;width: 96% ">
+                                <!--
+                                 <img src="img/test1.gif" style="width: 100%" >
+                                 <div class="shake"> 开始答题 </div>
+                                 <ul v-for="url in imgPage1">
+                                    <span class="bt_go cc1"  style="background-color: greenyellow;height: 100px;width: 100px" ></span>
+                                 </ul>
+                                 -->
+
+                            </div>
     <div id="page2" v-show="page2" class="change">
 
         <img src="img/page3.jpg" width="96%"  height="98%" class="haha"/>
@@ -100,12 +127,13 @@
     <audio src="http://img.tukuppt.com/preview_music/00/04/16/preview-5b835ce5407a3211.mp3" id="myaudio"   controls autoplay loop="true" hidden="true"></audio>
 
 </body>
-<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 <script src="js/vue.js"></script>
  <script src="js/shubiao.js"></script>
 <script src="js/jqAlert2.js"></script>
+<script src="js/aniAuto.js"></script>
 
 <script>
+
     var all_num = 0 ;// 统计总共的分数
     var audio = document.getElementById("myaudio");
 
@@ -274,11 +302,9 @@
                     $("#play").addClass("picc");
                     $('#myaudio')[0].play()
                 }
-
     }
-
         }
-    })
+    });
 
     $("#get").bind("input propertychange",function(event){
         $("#get").css('background-color', 'white') //监听input
@@ -286,5 +312,7 @@
     });
     $('#myaudio')[0].play()
 
+
+    $.aniAuto();
 </script>
 </html>
