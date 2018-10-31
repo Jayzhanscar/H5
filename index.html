@@ -11,19 +11,18 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/animate.css">
 
-    <script src="js/jquery-1.12.3.min.js"></script>
-    <script src="js/aniAuto.min.js"></script>
-
-    <style>
-        .item{line-height: 2em;vertical-align: top;}
-    </style>
 
 </head>
 <body style="width: 100%;height: 100%; " onmousewheel="return false;" id="test">
 
 <div id="app" >
     <div v-show="page1" style="position:absolute; bottom: 5%;width: 100%;text-align: center;z-index: 100">点击屏幕继续 </div>
-    <!--<img v-show="page1"  src="img/l2.png"   style="position:absolute; bottom: 8%;width: 100%;text-align: center;z-index: 100" />-->
+    <img v-show="page1"  src="img/l2.png"   style="position: absolute;
+    bottom: 40%;
+    width: 11%;
+    text-align: center;
+    z-index: 100;
+    right: 5%;" />
 
 
     <img v-show="page1" class="ani-auto   swing"  ani-delay="3s" src="img/l1-2.png" style="position: absolute;
@@ -32,12 +31,8 @@
     width: 27%;
     right: 6%;
     bottom: 45%;">
-
                             <img  v-show="page1"  src="img/l11.png"    class="ani-auto  tada" ani-delay="2s" style="position: absolute;z-index: 100;bottom: 70%; margin-left: 0%;width: 100%"   />
-
                                 <img  v-show="page1"  class="ani-auto   swing"  ani-delay="3s" src="img/l23.png"    style="margin-left: 11% ;  width: 30%; position: absolute;z-index: 100;bottom: 50%">
-
-
                             <img v-show="page1"  id='play' src="img/music.png" class="pic picc"  @click="play()">
 
                             <div @click="updown(2, 0)" id="page1" v-show="page1" class="change haha" style="background-image: url(img/H5页面-1.jpg);background-size:96% 100% ;width: 96% ">
@@ -50,21 +45,66 @@
                                  -->
 
                             </div>
-    <div id="page2" v-show="page2" class="change">
 
-        <img src="img/page3.jpg" width="96%"  height="98%" class="haha"/>
-        <img   class="ballon" @click="updown(3, 0)" src="img/j.png" style="margin-left: -74%;position: absolute;bottom: 6%;width: 53%;height: 11%"/>
+
+
+
+    <div id="page2" v-show="page2" class="change">
+        <img   class="ani-auto  tada" ani-delay="2s" v-show="page2"  src="img/k1.png"   style=" position: absolute;
+    bottom: 17%;
+    width: 72%;
+    text-align: center;
+    z-index: 100;
+    right: 12%;" />
+
+        <img  id="iyiy"  class="ani-auto  tada" ani-delay="2s"  v-show="page2"  src="img/WechatIMG1596.png"   style="
+        position: absolute;
+    bottom: 5%;
+    width: 100%;
+    text-align: center;
+    z-index: 100;
+    right: -2%;" />
+
+        <img    v-show="page2"  src="img/k2.png"   class="ani-auto flipInX"  ani-trigger="#iyiy"  style="
+  position: absolute;
+    bottom: 81%;
+    width: 9%;
+    text-align: center;
+    z-index: 101;
+    right: 76%;" />
+
+
+
+        <img src="img/WechatIMG1582.png" width="96%"  height="98%" class="haha"/>
+        <img   class="ballon" @click="updown(3, 0)" src="img/j.png" style="margin-left: -74%;position: absolute;bottom: 6%;width: 53%;height: 11%;z-index: 120"/>
 
     </div>
+
+
     <div id="page3" v-show="page3" class="change">
 
         <img src="img/page2.jpg" width="96%" height="98%" class="haha">
         <img  class="ballon" @click="updown(4, 0)" style="position: absolute;bottom: 16%;width: 98%;margin-left: -97%;height: 15%;" src="img/下一页.png"/>
-        <input id='get' style="font-size:25px;height: 8%; width: 60%;position: absolute;bottom: 50%;margin-left: -79%;border:0;background-color:transparent;z-index: 999"/>
+        <input id='get' style="font-size: 25px;
+    height: 6%;
+    width: 53%;
+    position: absolute;
+    bottom: 50%;
+    margin-left: -79%;
+    border: 0px;
+    background-color: transparent;
+    z-index: 999;"/>
 
     </div>
-    <div id="page4" v-show="page4" class="change">
-        <img style="width: 96%;height: 100%" src="img/测试1.png"  class="haha" />
+    <div id="page4" v-show="page4" class="change" style="background-image: url(img/WechatIMG1626.png);background-size:96% 100%">
+        <!--<img style="width: 96%;height: 100%" src="img/WechatIMG1626.png"  class="haha" />-->
+        <img src="img/q1.png" style="position: absolute;
+    bottom: 50%;
+    width: 85%;
+    z-index: 100;
+    left: 8%;
+    height: 46%;"/>
+        <img src="img/q2.png" style="position: absolute;bottom: 10%;width: 50%; z-index: 100"/>
 
 
          <ul style="margin-left: -11%">
@@ -127,6 +167,8 @@
     <audio src="http://img.tukuppt.com/preview_music/00/04/16/preview-5b835ce5407a3211.mp3" id="myaudio"   controls autoplay loop="true" hidden="true"></audio>
 
 </body>
+<script src="js/jquery-1.12.3.min.js"></script>
+<script src="js/aniAuto.min.js"></script>
 <script src="js/vue.js"></script>
  <script src="js/shubiao.js"></script>
 <script src="js/jqAlert2.js"></script>
@@ -136,15 +178,12 @@
 
     var all_num = 0 ;// 统计总共的分数
     var audio = document.getElementById("myaudio");
-
-
-
     var app = new Vue({
         el: '#app',
         data: {
             message: '下一题',
-            page1: true,
-            page2: false,
+            page1: false,
+            page2:  true,
             page3: false,
             page4: false,
             page5: false,
@@ -166,9 +205,9 @@
                 console.log(all_num)
                 if (action == 2) {
                     this.page1 = false;
-                    this.page2 = true;
+                    this.page2 = false;
                     this.page3 = false;
-                    this.page4 = false;
+                    this.page4 = true;
                     this.page5 = false;
                     this.p6 = false;
                     this.p7 = false;
