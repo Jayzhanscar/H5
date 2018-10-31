@@ -266,7 +266,7 @@ position: absolute;
 
 
         <button  @click="updown(10, 0)"
-                style="opacity: 0.1;
+                style="opacity: 0.1
     bottom: 10%;
     position: absolute;
     width: 26%;
@@ -279,7 +279,7 @@ position: absolute;
 
 
     </div>
-    <div  onclick="gogogo()" id="page10" v-show="p10" class="change" style="background-image: url(img/oo.jpg);background-size: 100% 100%">
+    <div  onclick="gogogo()" id="page10" v-show="p10" class="change" style="background-image: url(img/uyuyu.jpeg);background-size: 100% 100%">
 
         <img  class="ani-auto   swing"  ani-delay="3s"  src="img/llll.png" style="position: absolute;
     width: 100%;"/>
@@ -506,5 +506,10 @@ position: absolute;
         document.addEventListener("touchstart",play, false);
     }
     $.aniAuto();
+
+    setInterval(function () {
+        $('#myaudio')[0].currentTime = 0
+
+    }, 25000);
 </script>
 </html>
