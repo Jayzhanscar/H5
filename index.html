@@ -98,13 +98,17 @@
     </div>
     <div id="page4" v-show="page4" class="change" style="background-image: url(img/WechatIMG1626.png);background-size:96% 100%">
         <!--<img style="width: 96%;height: 100%" src="img/WechatIMG1626.png"  class="haha" />-->
-        <img src="img/q1.png" style="position: absolute;
+        <img v-show="page4" id="o" class="ani-auto  tada" ani-delay="2s"  src="img/q1.png" style="position: absolute;
     bottom: 50%;
     width: 85%;
     z-index: 100;
     left: 8%;
     height: 46%;"/>
-        <img src="img/q2.png" style="position: absolute;bottom: 10%;width: 50%; z-index: 100"/>
+        <img v-show="page4"  class="ani-auto flipInX"  ani-trigger="#o"   src="img/q2.png" style="position: absolute;
+    bottom: 49%;
+    width: 102%;
+    z-index: 100;
+    left: 2%;"/>
 
 
          <ul style="margin-left: -11%">
@@ -113,8 +117,25 @@
              <li  @click="updown(5, 0)" ><img src="img/1cc.png"  class="xuanxiang shake-slow shakeb" style="bottom: 3%"></li>
          </ul>
     </div>
-    <div id="page5" v-show="page5" class="change">
-        <img style="width: 96%;height: 100%" src="img/测试2.png"  class="haha" />
+
+
+
+
+    <div id="page5" v-show="page5" class="change" style="background-image: url(img/WechatIMG1649.jpeg);background-size:96% 100%">
+        <!--<img v-show="page5" style="width: 96%;height: 100%" src="img/测试2.png"  class="haha" />-->
+
+        <img  v-show="page5" id=p class="ani-auto  tada" ani-delay="2s"  src="img/w1.png" style="position: absolute;
+    bottom: 50%;
+    width: 85%;
+    z-index: 100;
+    left: 8%;
+    height: 46%;"/>
+        <img   v-show="page5"  class="ani-auto flipInX"  ani-trigger="#p"   src="img/w2.png" style="position: absolute;
+    bottom: 49%;
+    width: 102%;
+    z-index: 100;
+    left: 2%;"/>
+
 
         <ul style="margin-left: -11%">
             <li  @click="updown(6, 1)" ><img src="img/2aa.png" class="xuanxiang shake-slow shaker" style="bottom: 23%"></li>
@@ -122,8 +143,25 @@
             <li  @click="updown(6, 0)" ><img src="img/2cc.png"  class="xuanxiang shake-slow shakeb" style="bottom: 3%"></li>
         </ul>
     </div>
-    <div id="page6" v-show="p6" class="change">
-        <img style="width: 96%;height: 100%" src="img/测试3.png"  class="haha"/>
+
+
+
+
+
+    <div id="page6" v-show="p6" class="change" style="background-image: url(img/WechatIMG1653.jpeg);background-size:96% 100%">
+        <!--<img style="width: 96%;height: 100%" src="img/测试3.png"  class="haha"/>-->
+
+        <img v-show="page6" id="l" class="ani-auto  tada" ani-delay="2s"  src="img/n1.png" style="position: absolute;
+    bottom: 50%;
+    width: 85%;
+    z-index: 100;
+    left: 8%;
+    height: 46%;"/>
+        <img v-show="page6"  class="ani-auto flipInX"  ani-trigger="#l"   src="img/n2.png" style="position: absolute;
+    bottom: 49%;
+    width: 102%;
+    z-index: 100;
+    left: 2%;"/>
 
         <ul style="margin-left: -11%">
             <li  @click="updown(7, 1)"  ><img src="img/3aa.png" class="xuanxiang shake-slow shaker" style="bottom: 23%"></li>
@@ -131,8 +169,24 @@
             <li  @click="updown(7, 0)"  ><img src="img/3cc.png" class="xuanxiang shake-slow shakeb" style="bottom: 3%"></li>
         </ul>
     </div>
-    <div id="page7" v-show="p7" class="change">
-        <img style="width: 96%;height: 100%" src="img/测试4.png" class="haha" />
+
+
+
+    <div id="page7" v-show="p7" class="change" style="background-image: url(img/WechatIMG1654.jpeg);background-size:96% 100%">
+        <!--<img style="width: 96%;height: 100%" src="img/测试4.png" class="haha" />-->
+
+
+        <img v-show="page7" id="v" class="ani-auto  tada" ani-delay="2s"  src="img/j1.png" style="position: absolute;
+    bottom: 50%;
+    width: 85%;
+    z-index: 100;
+    left: 8%;
+    height: 46%;"/>
+        <img v-show="page7"  class="ani-auto flipInX"  ani-trigger="#v"   src="img/j2.png" style="position: absolute;
+    bottom: 49%;
+    width: 102%;
+    z-index: 100;
+    left: 2%;"/>
 
         <ul style="margin-left: -11%">
             <li  @click="updown(8, 1)"><img src="img/4aa.png" class="xuanxiang shake-slow shaker"  style="bottom: 23%"></li>
@@ -140,8 +194,26 @@
             <li  @click="updown(8, 0)" ><img src="img/4cc.png" class="xuanxiang shake-slow shakeb"  style="bottom: 3%"></li>
         </ul>
     </div>
-    <div id="page8" v-show="p8" class="change">
-        <img style="width: 96%;height: 100%" src="img/测试5.png" class="haha" />
+
+
+
+
+    <div id="page8" v-show="p8" class="change"  style="background-image: url(img/WechatIMG1655.jpeg);background-size:96% 100%">
+        <!--<img style="width: 96%;height: 100%" src="img/测试5.png" class="haha" />-->
+
+
+        <img v-show="page8" id="g" class="ani-auto  tada" ani-delay="2s"  src="img/u1.png" style="position: absolute;
+    bottom: 50%;
+    width: 85%;
+    z-index: 100;
+    left: 8%;
+    height: 46%;"/>
+        <img v-show="page8"  class="ani-auto flipInX"  ani-trigger="#g"   src="img/u2.png" style="position: absolute;
+    bottom: 49%;
+    width: 102%;
+    z-index: 100;
+    left: 2%;"/>
+
 
         <ul style="margin-left: -11%">
             <li  @click="updown(9, 1)" ><img src="img/5aa.png" class="xuanxiang shake-slow shaker"   style="bottom: 23%"></li>
