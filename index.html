@@ -11,12 +11,45 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/animate.css">
 
+    <style>
+        @keyframes scaleDraw {  /*定义关键帧、scaleDrew是需要绑定到选择器的关键帧名称*/
+            0%{
+                transform: scale(1);  /*开始为原始大小*/
+            }
+            25%{
+                transform: scale(1.1); /*放大1.1倍*/
+            }
+            50%{
+                transform: scale(1);
+            }
+            75%{
+                transform: scale(1.1);
+            }
+        }
+        .ballon{
+
+            background-size: 150px 200px;
+            -webkit-animation-name: scaleDraw; /*关键帧名称*/
+            -webkit-animation-timing-function: ease-in-out; /*动画的速度曲线*/
+            -webkit-animation-iteration-count: infinite;  /*动画播放的次数*/
+            -webkit-animation-duration: 5s; /*动画所花费的时间*/
+        }
+    </style>
+
 
 </head>
 <body style="width: 100%;height: 100%; " onmousewheel="return false;" id="test">
 
+<div  class="ballon" style="
+position: absolute;
+    top: 3%;
+    right: -3%;
+    z-index: 100;
+    color: saddlebrown;">
+    <span>点击打开音乐</span>
+</div>
 <div id="app" >
-    <div v-show="page1" style="position:absolute; bottom: 5%;width: 100%;text-align: center;z-index: 100">点击屏幕继续 </div>
+    <div class="ballon" v-show="page1" style="position:absolute; bottom: -22%;width: 100%;text-align: center;z-index: 100">点击屏幕继续 </div>
     <img v-show="page1"  src="img/l2.png"   style="position: absolute;
     bottom: 40%;
     width: 11%;
@@ -25,7 +58,7 @@
     right: 5%;" />
 
 
-    <img v-show="page1" class="ani-auto   swing"  ani-delay="3s" src="img/l1-2.png" style="position: absolute;
+    <img v-show="page1" class="ani-auto   swing"  ani-delay="3s" src="img/xx1.png" style="position: absolute;
 
     z-index: 100;
     width: 27%;
@@ -33,21 +66,12 @@
     bottom: 45%;">
                             <img  v-show="page1"  src="img/l11.png"    class="ani-auto  tada" ani-delay="2s" style="position: absolute;z-index: 100;bottom: 70%; margin-left: 0%;width: 100%"   />
                                 <img  v-show="page1"  class="ani-auto   swing"  ani-delay="3s" src="img/l23.png"    style="margin-left: 11% ;  width: 30%; position: absolute;z-index: 100;bottom: 50%">
-                            <img v-show="page1"  id='play' src="img/music.png" class="pic picc"  @click="play()">
+                            <img   id='play' src="img/music.png" class="pic pic"  @click="play()">
+
 
                             <div @click="updown(2, 0)" id="page1" v-show="page1" class="change haha" style="background-image: url(img/H5页面-1.jpg);background-size:96% 100% ;width: 96% ">
-                                <!--
-                                 <img src="img/test1.gif" style="width: 100%" >
-                                 <div class="shake"> 开始答题 </div>
-                                 <ul v-for="url in imgPage1">
-                                    <span class="bt_go cc1"  style="background-color: greenyellow;height: 100px;width: 100px" ></span>
-                                 </ul>
-                                 -->
 
                             </div>
-
-
-
 
     <div id="page2" v-show="page2" class="change">
         <img   class="ani-auto  tada" ani-delay="2s" v-show="page2"  src="img/k1.png"   style=" position: absolute;
@@ -66,12 +90,12 @@
     right: -2%;" />
 
         <img    v-show="page2"  src="img/k2.png"   class="ani-auto flipInX"  ani-trigger="#iyiy"  style="
-  position: absolute;
-    bottom: 81%;
-    width: 9%;
+ position: absolute;
+    bottom: 83%;
+    width: 17%;
     text-align: center;
     z-index: 101;
-    right: 76%;" />
+    right: 71%;" />
 
 
 
@@ -98,13 +122,13 @@
     </div>
     <div id="page4" v-show="page4" class="change" style="background-image: url(img/WechatIMG1626.png);background-size:96% 100%">
         <!--<img style="width: 96%;height: 100%" src="img/WechatIMG1626.png"  class="haha" />-->
-        <img v-show="page4" id="o" class="ani-auto  tada" ani-delay="2s"  src="img/q1.png" style="position: absolute;
+        <img v-show="page4" id="o" class="ani-auto  tada" ani-delay="2s"  src="img/tt5.png" style="position: absolute;
     bottom: 50%;
     width: 85%;
     z-index: 100;
     left: 8%;
     height: 46%;"/>
-        <img v-show="page4"  class="ani-auto flipInX"  ani-trigger="#o"   src="img/q2.png" style="position: absolute;
+        <img v-show="page4"  class="ani-auto flipInX"  ani-trigger="#o"   src="img/qq1.png" style="position: absolute;
     bottom: 49%;
     width: 102%;
     z-index: 100;
@@ -124,13 +148,13 @@
     <div id="page5" v-show="page5" class="change" style="background-image: url(img/WechatIMG1649.jpeg);background-size:96% 100%">
         <!--<img v-show="page5" style="width: 96%;height: 100%" src="img/测试2.png"  class="haha" />-->
 
-        <img  v-show="page5" id=p class="ani-auto  tada" ani-delay="2s"  src="img/w1.png" style="position: absolute;
+        <img  v-show="page5" id=p class="ani-auto  tada" ani-delay="2s"  src="img/tt2.png" style="position: absolute;
     bottom: 50%;
     width: 85%;
     z-index: 100;
     left: 8%;
     height: 46%;"/>
-        <img   v-show="page5"  class="ani-auto flipInX"  ani-trigger="#p"   src="img/w2.png" style="position: absolute;
+        <img   v-show="page5"  class="ani-auto flipInX"  ani-trigger="#p"   src="img/cc1.png" style="position: absolute;
     bottom: 49%;
     width: 102%;
     z-index: 100;
@@ -151,13 +175,13 @@
     <div id="page6" v-show="p6" class="change" style="background-image: url(img/WechatIMG1653.jpeg);background-size:96% 100%">
         <!--<img style="width: 96%;height: 100%" src="img/测试3.png"  class="haha"/>-->
 
-        <img v-show="page6" id="l" class="ani-auto  tada" ani-delay="2s"  src="img/n1.png" style="position: absolute;
+        <img   id="l" class="ani-auto  tada" ani-delay="2s"  src="img/tt3.png" style="position: absolute;
     bottom: 50%;
     width: 85%;
     z-index: 100;
     left: 8%;
     height: 46%;"/>
-        <img v-show="page6"  class="ani-auto flipInX"  ani-trigger="#l"   src="img/n2.png" style="position: absolute;
+        <img    class="ani-auto flipInX"  ani-trigger="#l"   src="img/cc3.png" style="position: absolute;
     bottom: 49%;
     width: 102%;
     z-index: 100;
@@ -176,13 +200,13 @@
         <!--<img style="width: 96%;height: 100%" src="img/测试4.png" class="haha" />-->
 
 
-        <img v-show="page7" id="v" class="ani-auto  tada" ani-delay="2s"  src="img/j1.png" style="position: absolute;
+        <img   id="v" class="ani-auto  tada" ani-delay="2s"  src="img/tt2.png" style="position: absolute;
     bottom: 50%;
     width: 85%;
     z-index: 100;
     left: 8%;
     height: 46%;"/>
-        <img v-show="page7"  class="ani-auto flipInX"  ani-trigger="#v"   src="img/j2.png" style="position: absolute;
+        <img   class="ani-auto flipInX"  ani-trigger="#v"   src="img/cc4.png" style="position: absolute;
     bottom: 49%;
     width: 102%;
     z-index: 100;
@@ -202,13 +226,13 @@
         <!--<img style="width: 96%;height: 100%" src="img/测试5.png" class="haha" />-->
 
 
-        <img v-show="page8" id="g" class="ani-auto  tada" ani-delay="2s"  src="img/u1.png" style="position: absolute;
+        <img   id="g" class="ani-auto  tada" ani-delay="2s"  src="img/tt4.png" style="position: absolute;
     bottom: 50%;
     width: 85%;
     z-index: 100;
     left: 8%;
     height: 46%;"/>
-        <img v-show="page8"  class="ani-auto flipInX"  ani-trigger="#g"   src="img/u2.png" style="position: absolute;
+        <img  class="ani-auto flipInX"  ani-trigger="#g"   src="img/Wcc5.png" style="position: absolute;
     bottom: 49%;
     width: 102%;
     z-index: 100;
@@ -222,16 +246,44 @@
         </ul>
 
     </div>
-    <div id="page9" v-show="p9" class="change">
-        <img id="result" style="width: 96%;height: 100%" src="img/777.jpg" class="haha" />
-        <img  onclick="window.location.reload('/test/index.html')"  src="img/1q.png" style="position: absolute; bottom: 9%;margin-left: -79%;height: 7%;z-index: 99;width: 29%;">
-         <img  @click="updown(10, 0)" src="img/2q.png" style="position: absolute; bottom: 9%;margin-left: -46%;height: 7%;z-index: 99;width: 29%;">
+    <div id="page9" v-show="p9" class="change" style="background-image: url(img/777.jpg); background-size: 96% 100%">
+        <!--<img id="result" style="width: 96%;height: 100%" src="img/777.jpg" class="haha" />-->
+        <img  class="ani-auto   swing"  ani-delay="3s" id="qaz" style="width: 60%;position: absolute;top: 0;left: 15%;" src="img/e77.png" class="haha"  />
+        <span class="ani-auto   swing"  ani-delay="3s" style="position: absolute;
+    top: 6%;
+    left: 23%;"> {{name}}</span>
+
+
+        <button onclick="window.location.reload('/test/index.html')"
+                style="opacity: 0.1;
+    bottom: 10%;
+    position: absolute;
+    width: 26%;
+    height: 7%;
+    background-color: rgb(0, 145, 57);
+    left: 18%;
+"></button>
+
+
+        <button  @click="updown(10, 0)"
+                style="opacity: 0.1;
+    bottom: 10%;
+    position: absolute;
+    width: 26%;
+    height: 7%;
+    background-color: rgb(0, 145, 57);
+    left: 51%;
+"></button>
+        <!--<img  onclick="window.location.reload('/test/index.html')"  src="img/1q.png" style="position: absolute; bottom: 9%;margin-left: -79%;height: 7%;z-index: 99;width: 29%;">-->
+         <!--<img  @click="updown(10, 0)" src="img/2q.png" style="position: absolute; bottom: 9%;margin-left: -46%;height: 7%;z-index: 99;width: 29%;">-->
 
 
     </div>
-    <div id="page10" v-show="p10" class="change">
-        <img style="width: 100%;height: 100%" src="img/oo.jpg"  />
-        <a href="https://t.asczwa.com/taobao?backurl=http://m.tb.cn/h.3SKosPB">跳转</a>
+    <div  onclick="gogogo()" id="page10" v-show="p10" class="change" style="background-image: url(img/oo.jpg);background-size: 100% 100%">
+
+        <img  class="ani-auto   swing"  ani-delay="3s"  src="img/llll.png" style="position: absolute;
+    width: 100%;"/>
+
 
 
     </div>
@@ -253,9 +305,10 @@
     var app = new Vue({
         el: '#app',
         data: {
+            name : '',
             message: '下一题',
-            page1: false,
-            page2:  true,
+            page1: true,
+            page2:  false,
             page3: false,
             page4: false,
             page5: false,
@@ -271,15 +324,16 @@
         },
         methods: {
             updown: function (action, type) {
+
                 if(type == 1){
                     all_num +=1
                 }
-                console.log(all_num)
+                console.log(all_num);
                 if (action == 2) {
                     this.page1 = false;
-                    this.page2 = false;
+                    this.page2 = true;
                     this.page3 = false;
-                    this.page4 = true;
+                    this.page4 = false;
                     this.page5 = false;
                     this.p6 = false;
                     this.p7 = false;
@@ -304,6 +358,7 @@
                         jqAlert.Layer('请填写昵称哦',2000)
                     }
                     else {
+                        this.name = $('#get').val()
                         this.page1 = false;
                         this.page2 = false;
                         this.page3 = false;
@@ -366,17 +421,21 @@
                 }
                 if(action == 9){
                     if(all_num >= 4){
-                        $("#result").attr("src","img/9999.jpg")
+                        $("#page9").css("background-image","url(img/999.png)");
+                        $("#qaz").attr("src","img/e99.png")
 
                     }
                     if (all_num >= 3 && all_num<4 ){
-                        $("#result").attr("src","img/78.jpg")
+                        $("#page9").css("background-image","url(img/78.png)");
+                        $("#qaz").attr("src","img/e78.png")
                     }
                     if (all_num >= 2 && all_num<3 ){
-                        $("#result").attr("src","img/25.jpg")
+                        $("#page9").css("background-image","url(img/50.png)");
+                        $("#result").attr("src","img/e25.png")
                     }
                     if (all_num >= 1 && all_num<2 ){
-                        $("#result").attr("src","img/777.jpg")
+                        $("#page9").css("background-image","url(img/777.png)");
+                        $("#result").attr("src","img/e77.png")
                     }
                     this.page1 = false;
                     this.page2 = false;
@@ -421,9 +480,31 @@
         $("#get").css('background-color', 'white') //监听input
         console.log('ok')
     });
-    $('#myaudio')[0].play()
+    audioAutoPlay('myaudio');
+    $('#myaudio')[0].play();
 
 
+     function gogogo() {
+         window.location.href="https://ainuomaya.tmall.com/shop/view_shop.htm?spm=a230r.7195193.1997079397.2.20594671nGUByY"; //你需要跳转的地址
+
+     }
+
+    function audioAutoPlay(id){
+
+        var audio = document.getElementById(id),
+            play = function(){
+                audio.play();
+                document.removeEventListener("touchstart",play, false);
+            };
+        audio.play();
+        document.addEventListener("WeixinJSBridgeReady", function () {
+            play();
+        }, false);
+        document.addEventListener('YixinJSBridgeReady', function() {
+            play();
+        }, false);
+        document.addEventListener("touchstart",play, false);
+    }
     $.aniAuto();
 </script>
 </html>
